@@ -1,20 +1,31 @@
 /**
+ * Exception for testing validation of a triangle
  * Created by sebastian on 11/16/15.
  */
-public class TriangleException extends Exception {
+class TriangleException extends Exception {
 
-    private int a;
-    private int b;
-    private int c;
+    private final int a;
+    private final int b;
+    private final int c;
+
+    /**
+     * set the sides of the invalid triangle
+     * @param a side a
+     * @param b side b
+     * @param c side c
+     */
     public TriangleException(int a, int b, int c)
     {
         this.a = a;
         this.b = b;
         this.c = c;
     }
+
+    /**
+     * @return the error messages.
+     */
     public String getError()
     {
-        String error = "Triangle a=" + a + " b=" + b + " c=" + c + " is not a valid triangle";
-        return error;
+        return "Triangle a=" + a + " b=" + b + " c=" + c + " is not a valid triangle";
     }
 }
